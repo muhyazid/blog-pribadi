@@ -31,6 +31,7 @@ const { title, description, image = FallbackImage } = Astro.props;
 	href={new URL('rss.xml', Astro.site)}
 />
 <meta name="generator" content={Astro.generator} />
+<meta name="robots" content="index, follow" />
 
 <Font cssVariable="--font-atkinson" preload />
 
@@ -44,10 +45,11 @@ const { title, description, image = FallbackImage } = Astro.props;
 
 <!-- Open Graph / Facebook -->
 <meta property="og:type" content="website" />
-<meta property="og:url" content={Astro.url} />
+<meta property="og:url" content={canonicalURL} />
 <meta property="og:title" content={title} />
 <meta property="og:description" content={description} />
-<meta property="og:image" content={new URL(image.src, Astro.url)} />
+<meta property="og:site_name" content="Jejak Pikir" />
+<meta property="og:locale" content="id_ID" />
 
 <!-- Twitter -->
 <meta property="twitter:card" content="summary_large_image" />
